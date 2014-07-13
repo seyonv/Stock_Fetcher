@@ -10,6 +10,9 @@ gem 'bootstrap-will_paginate','0.0.9'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
+
+  #using mysql instead of sqlite for the database
+  gem 'mysql2' 
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
   gem 'spork-rails', github: 'sporkrb/spork-rails'

@@ -1,6 +1,39 @@
 StockFetcher::Application.routes.draw do
-  get "static_pages/home"
+  
+
+  get "stocks/new"
   root 'static_pages#home'
+  match '/about' ,to: 'static_pages#about', via:'get'
+  
+#  match '/home' ,to: 'static_pages#home', via:'get'
+
+  #don't need the ability to edit as of now
+  resources :users, only: [:new, :create, :destroy]
+  match '/singlestock', to: 'stocks#singlestock', via:'get'
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,4 +88,4 @@ StockFetcher::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

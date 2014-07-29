@@ -1,0 +1,17 @@
+<% provide(:title, @stock.symbol) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				 Stock SymboL: <%= @stock.symbol%>
+			</h1>
+
+			<h4>> Ask Price: <%= @stock.stockname %> </h4>
+			<h4>> Close Price: <%= @stock.closeprice %> </h4>
+			<h4>> Market Cap: 
+				  <%= @stock.marketcap %> Billion</h4>
+			
+
+		</section>
+	</aside>
+</div>

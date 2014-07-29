@@ -1,0 +1,15 @@
+<% provide(:title, 'All Stocks Stored in Database') %>
+<h1> All Stocks </h1>
+
+
+<!-- This looks for an instance variable (@users)
+	with the same name as the controller(users) -->
+<%= will_paginate %>
+
+	<ul class ="stock">
+		<!-- By default this renders a collection of objects of type
+			Stocks using the partial file _user.html.erb-->
+		<%=render @stocks %>
+	</ul>
+
+<%= will_paginate %>

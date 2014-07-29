@@ -1,3 +1,5 @@
+#Because the file is called application_helper.html.erb
+#the module and all of its' function are accesible by layouts/application.html.erb
 module ApplicationHelper
 
 	def full_title(page_title)

@@ -1,16 +1,18 @@
 StockFetcher::Application.routes.draw do
   
-
-  get "stocks/new"
-  root 'static_pages#home'
-  match '/about' ,to: 'static_pages#about', via:'get'
   
+  root 'static_pages#home'
+  get "stocks/new"
+  
+  match '/about' ,to: 'static_pages#about', via:'get'
+  match '/stocks', to: 'stocks#index', via:'get'
 #  match '/home' ,to: 'static_pages#home', via:'get'
 
-  #don't need the ability to edit as of now
-  resources :users, only: [:new, :create, :destroy]
+  #need the ability to create, destroy, allow user to enter desired stock symbol
+  #and allow user to edit the stock symbol of choice
+  resources :stocks 
   match '/singlestock', to: 'stocks#singlestock', via:'get'
-
+  
 end
 
 

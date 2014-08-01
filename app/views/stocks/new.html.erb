@@ -1,25 +1,30 @@
 
 
-
+<center>
 <% provide(:title, 'New Stock') %>
 <h1> Add New Stock To Database </h1>
-<h4> 
-	<i>Uses entered Stock Symbol and fetches data from YahooFinance </i>
-<h4>
+
+	<font size="+1"> 
+		<i>(Takes the Entered Stock Symbol and fetches data from YahooFinance )</i>
+
+	</font>  </br>
+</br>
 
 
 
 
 <div class="row">
-	<div class="span6 offest3">
+	<div class="span6 offset3">
 		<%=form_for (@stock) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 			<%=f.label :symbol %>
 			<%=f.text_field :symbol %>
 
-			<%=f.submit "Add Stock to Portfoilo", class: "btn btn-large btn-primary" %>
+			<%=f.submit "Add Stock to Portfoilo", 
+			class: "btn btn-primary" %>
 			
 		<% end %>
 	</div>
 </div>
 
+</center>

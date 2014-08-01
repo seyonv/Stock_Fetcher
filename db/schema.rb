@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714165155) do
+ActiveRecord::Schema.define(version: 20140731025452) do
 
   create_table "stocks", force: true do |t|
     t.string   "symbol"
-    t.decimal  "askprice"
+    t.text     "askprice"
     t.string   "stockname"
-    t.decimal  "closeprice"
-    t.decimal  "marketcap"
+    t.text     "closeprice"
+    t.text     "marketcap"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "volume"
   end
 
 end

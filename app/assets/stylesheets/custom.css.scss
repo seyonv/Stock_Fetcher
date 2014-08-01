@@ -25,6 +25,7 @@ section {
 
 textarea {
 	resize: vertical;
+	
 }
 
 .center {
@@ -163,7 +164,7 @@ input {
 	}
 }
 
-.field_with_errors {
+._with_errors {
 	@extend .control-group;
 	@extend .error;
 }
@@ -237,6 +238,7 @@ aside {
     margin: 1px 1px;
   }
 }
+
 
 
 

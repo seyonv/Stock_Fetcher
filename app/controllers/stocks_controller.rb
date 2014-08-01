@@ -6,6 +6,11 @@ class StocksController < ApplicationController
   #and attempts to save it to the database
   def index
     @stocks=Stock.paginate(:page => params[:page]) #will_paginate gem separates into pages
+    #implementing ActiveModelSerializer
+    respond_to do |format|
+      format.html
+      format.json {render json: @stocks, :each_serializer => StockIndexSerializer}
+    end
   end
 
   def new
@@ -17,7 +22,13 @@ class StocksController < ApplicationController
   end
   
   def show
-    @stock = Stock.find(params[:id]) 
+    #@stock = Stock.find(params[:id]) 
+    #Implementing ActiveModelSerializer
+    @stock=Stock.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json {render json: @stock}
+    end
   end
 
   #this method is intended to display the stock variable
@@ -73,6 +84,12 @@ class StocksController < ApplicationController
     #allow user to either enter stock name or stocksymbol
     params.require(:stock).permit(:symbol,:stockname)
   end
+
+  #Defining this method will automatically make the serializer
+  #look in the controller and apply the set options
+  #def default_serializer_options
+   # {root: false}
+  #end
 
   private :stock_params
 end
